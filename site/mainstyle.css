@@ -1,0 +1,84 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+#freewall{
+    margin: 10% auto;
+    width: 85%;
+    padding: 0px;
+}
+
+/* 1 - standart (1x1)*/
+.brick {
+    width: 33%;
+    background-color: #666;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    transition: filter 0.5s;
+    -webkit-transition: -webkit-filter 0.5s;
+    -o-transition: -o-filter 0.5s;
+    
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+}
+.brick:before{
+    content: ""; display: block; padding-top: 55%;
+}
+.brick:hover{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -o-filter: grayscale(00%);
+}
+
+.big{
+   width: 66%;
+}
+
+.tall{
+    width: 33%;
+}
+.tall:before{
+    content: ""; display: block; padding-top: 110%;
+}
+
+/* fix width issue < 1100 */
+@media all and (max-width: 400px){
+    .brick {
+        width: 100%;
+    }
+    .tall{
+        width: 100%;
+    }
+}
+
+/* images */
+
+.bio{
+    background-image: url("imgs/bio3.png");
+}
+
+.ve{
+    background-image: url("imgs/ve1.png");
+}
+
+.carva{
+    background-image: url("imgs/carvalab.png");
+}
+
+.fiore{
+    background-image: url("imgs/fiore.png");
+}
+
+.ciclo{
+    background-image: url("imgs/ciclo.png");
+}
+
+.fogao{
+     background-image: url("imgs/fogao.png");
+}
