@@ -278,9 +278,14 @@ trabalhos:
             type: image
             attrib: title # Note: retrieve this in your template with {{ record.values.image.title }}
             group: media
+        tamanho:
+            type: select
+            values: [ normal, alto, grande ]
+        tipo:
+            type: select
+            values: [ ilustra, design, outro ]
         galeria:
             type: imagelist
-    taxonomy: [ categories ]
     record_template: job.twig
     listing_template: job_listing.twig
     listing_records: 9

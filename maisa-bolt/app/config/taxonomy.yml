@@ -22,4 +22,4 @@ categories:
     singular_slug: category
     behaves_like: categories
     multiple: true
-    options: [ design, desenho, outro ]
+    options: [ design, ilustracao, outro ]

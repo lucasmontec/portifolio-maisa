@@ -40,12 +40,8 @@ function calcCellH() {
     console.log("screen: "+w_width+" "+w_height+" using cell h: "+w_bestCellH);
 }
 
-
-//Build the wall
-$(document).ready(function() {
-    calcCellH();
-    
-	var wall = new freewall("#freewall");
+function buildWall(){
+    var wall = new freewall("#freewall");
 	wall.reset({
 		selector: '.brick',
         animate: false,
@@ -68,14 +64,77 @@ $(document).ready(function() {
     });
     
     $(window).trigger("resize");
+}
+
+//Store mode
+function beginState(){
+    if(sessionStorage.currentPlate == undefined){
+        sessionStorage.currentPlate = 'all';
+    }
+}
+
+function fetchState(){
+    if(sessionStorage.currentPlate == 'all'){
+        $.get( "/maisa-bolt/trabalhos", { filter: "all" }, function( data ) {
+            $( "#insert" ).html( data );
+            console.log(data);
+            setTimeout(function(){
+                buildWall();
+            }, 5);
+        });
+    }
+    if(sessionStorage.currentPlate == 'ilustra'){
+        $.get( "/maisa-bolt/trabalhos", { filter: "ilustra" }, function( data ) {
+            $( "#insert" ).html( data );
+            setTimeout(function(){
+                buildWall();
+            }, 5);
+        });
+    }
+    if(sessionStorage.currentPlate == 'design'){
+        $.get( "/maisa-bolt/trabalhos", { filter: "design" }, function( data ) {
+            $( "#insert" ).html( data );
+            setTimeout(function(){
+                buildWall();
+            }, 5);
+        });
+    }
+}
+
+//Build the wall
+$(document).ready(function() {
+    calcCellH();
+        
+    buildWall();
     
-    $(window).bind('resize', function(e)
+    beginState();
+    fetchState();
+    
+    /*$(window).bind('resize', function(e)
     {
       if (window.RT) clearTimeout(window.RT);
-      window.RT = setTimeout(function()
+        window.RT = setTimeout(function()
       {
-        this.location.reload(false); /* false to get page from cache */
+        this.location.reload(false);
       }, 100);
+    });*/
+    
+    
+    $("#filter-all").click(function(){
+        sessionStorage.currentPlate = 'all';
+        fetchState();
+    });
+    
+    $("#filter-art").click(function(){
+        sessionStorage.currentPlate = 'ilustra';
+        fetchState();
+    });
+
+    $("#filter-design").click(function(){
+        sessionStorage.currentPlate = 'design';
+        fetchState();
     });
 });
+
+
 

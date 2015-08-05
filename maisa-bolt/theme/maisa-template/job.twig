@@ -1,0 +1,26 @@
+<article>
+
+    <!-- Conteúdo principal - A barriga do site -->
+    <div class="container">
+
+        <div class="">
+            <h2 class="" data-bolt-field="title">{{ trabalho.titulo }}</h2>
+            <h3 class="">{{ trabalho.subtitulo }}</h3>
+            {% if trabalho.conteudo|length > 0 %}
+                <div class="">
+                {{ trabalho.conteudo }}
+                </div>
+            {% endif %}
+
+            {% if trabalho.imagem!="" %}
+                <div class="imageholder">
+                    <a href="{{ image(trabalho.imagem) }}">
+                        <img src="{{ thumbnail(trabalho.imagem, 400, 260) }}">
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+
+    </div>
+
+</article>

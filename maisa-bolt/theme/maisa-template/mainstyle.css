@@ -42,6 +42,22 @@
     text-decoration: none;
 }
 
+/* Cabeçalho - Menu central (conteudo) */
+#menu{
+    position: absolute;
+    top: 40px;
+    text-align: center;
+    width: 100%;
+}
+#menu ul{
+    list-style-type: none;
+    padding:0;
+}
+#menu li{
+    display:inline;
+    margin-left: 10px;
+}
+
 /* Cabeçalho - Menu direito (navegação) */
 #right-menu{
     font-family: CenturyGothic;

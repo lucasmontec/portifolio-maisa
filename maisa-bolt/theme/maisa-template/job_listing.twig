@@ -1,0 +1,57 @@
+
+<!-- Conteúdo principal - A barriga do site -->
+<div class="container">
+
+    <div id="freewall">
+        
+        <!--all stuff -->
+        {% if app.request.get('filter') == 'all' %}
+        
+            {% for trabalho in trabalhos %}
+        
+            {% if trabalho.imagem!="" %}
+            <a href="{{ trabalho.link }}">
+                <div class="brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+                </div>
+            </a>
+            {% endif %}
+        
+            {% endfor %}
+        
+        {% endif %}
+        
+        <!--art or ilustra stuff -->
+        {% if app.request.get('filter') == 'ilustra' %}
+        
+            {% for trabalho in trabalhos %}
+
+            {% if trabalho.imagem!="" and trabalho.tipo=="ilustra" %}
+            <a href="{{ trabalho.link }}">
+                <div class="brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+                </div>
+            </a>
+            {% endif %}
+        
+            {% endfor %}
+        
+        {% endif %}
+
+        <!--design stuff -->
+        {% if app.request.get('filter') == 'design' %}
+        
+            {% for trabalho in trabalhos %}
+
+            {% if trabalho.imagem!="" and trabalho.tipo=="design" %}
+            <a href="{{ trabalho.link }}">
+                <div class="brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+                </div>
+            </a>
+            {% endif %}
+        
+            {% endfor %}
+        
+        {% endif %}
+        
+    </div>
+    
+</div>
