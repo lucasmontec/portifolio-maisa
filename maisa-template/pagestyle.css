@@ -1,0 +1,22 @@
+/* container do corpo principal das paginas */
+.page-body{
+    margin: 10% auto;
+    width: 85%;
+    height: 500px;
+    padding: 0px;
+}
+
+/*titulo das paginas (sub paginas: sobre, contato)*/
+.page-title{
+    font-family: CenturyGothic;
+    margin: 10% 0 1% 0;
+}
+
+/* estilo dos paragrafos de descrição da pagina */
+.page-description{
+    height: 60%;
+}
+.page-description p{
+    font-family: CenturyGothic;
+    line-height: 20px;
+}

@@ -1,0 +1,4 @@
+#Arquivo para a skynet localizar o site.
+
+User-agent: *
+Disallow:

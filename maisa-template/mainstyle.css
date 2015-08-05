@@ -1,0 +1,149 @@
+/* fontes do projeto */
+@font-face { font-family: Century; src: url('fonts/CENTURY.TTF'); } 
+@font-face { font-family: CenturyGothic; src: url('fonts/GOTHIC.TTF'); } 
+@font-face { font-family: GothicBold; src: url('fonts/GOTHICB.TTF'); } 
+@font-face { font-family: GothicBoldItalic; src: url('fonts/GOTHICBI.TTF'); } 
+@font-face { font-family: GothicItalic; src: url('fonts/GOTHICI.TTF'); } 
+
+/* Fundo */
+#back-gradient{
+    position: fixed;
+    top: 40%;
+    left: 0px;
+    width: 100%;
+    height: 60%;
+
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,255,216,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(0,255,216,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,255,216,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,255,216,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,255,216,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(0,255,216,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffd8', GradientType=0 );
+}
+
+/* Body - corpo do site */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+/* Body - cabeçalho */
+/* Cabeçalho - Nome */
+#name{
+    font-family: GothicBold;
+    font-size: 20px;
+    position: absolute;
+    top: 40px;
+    left: 7.5%;
+    color: black;
+    text-decoration: none;
+}
+
+/* Cabeçalho - Menu direito (navegação) */
+#right-menu{
+    font-family: CenturyGothic;
+    font-size: 14px;
+    position: absolute;
+    top: 43.5px;
+    right: 7.5%;
+}
+
+/* Botões */
+.selected{
+    font-family: GothicBold;
+    border-style: solid none none none;
+    border-width: 6px;
+    border-color: #00ffd8;
+    margin-top: -6px;
+}
+#right-menu li{
+    float: left;
+    margin-left: 20px;
+}
+#right-menu a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Body - conteudo */
+#freewall{
+    margin: 10% auto;
+    width: 85%;
+    padding: 0px;
+}
+
+/* 1 - standart (1x1)*/
+.brick {
+    width: 33%;
+    background-color: #666;
+    padding: 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+    transition: filter 0.5s;
+    -webkit-transition: -webkit-filter 0.5s;
+    -o-transition: -o-filter 0.5s;
+    
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+}
+.brick:before{
+    content: ""; display: block; padding-top: 55%;
+}
+.brick:hover{
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+    -o-filter: grayscale(00%);
+}
+
+.big{
+   width: 66%;
+}
+
+.tall{
+    width: 33%;
+}
+.tall:before{
+    content: ""; display: block; padding-top: 110%;
+}
+
+/* fix width issue < 1100 */
+@media all and (max-width: 400px){
+    .brick {
+        width: 100%;
+    }
+    .tall{
+        width: 100%;
+    }
+}
+
+/* images */
+
+.bio{
+    background-image: url("imgs/bio3.png");
+}
+
+.ve{
+    background-image: url("imgs/ve1.png");
+}
+
+.carva{
+    background-image: url("imgs/carvalab.png");
+}
+
+.fiore{
+    background-image: url("imgs/fiore.png");
+}
+
+.ciclo{
+    background-image: url("imgs/ciclo.png");
+}
+
+.fogao{
+     background-image: url("imgs/fogao.png");
+}

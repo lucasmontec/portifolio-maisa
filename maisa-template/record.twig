@@ -1,0 +1,18 @@
+{% include '_header.twig' %}
+        <!-- Conteúdo principal - A barriga do site -->
+        <div class="container">
+
+            <div class="page-body">
+                <h2 class="page-title" data-bolt-field="title">{{ record.title }}</h2>
+                
+                {% if page.body|length > 0 %}
+                    <div class="page-description">
+                    {{ page.body }}
+                    </div>
+                {% endif %}
+            </div>
+            
+		</div>
+		
+	</body>
+</html>

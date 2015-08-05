@@ -1,0 +1,11 @@
+<ul>
+{% for item in menu %}
+    <li>
+        {% if item|current %}
+            <a class="selected" href="{{ item.link }}">{{item.label}}</a>
+        {% else %}
+            <a href="{{ item.link }}">{{item.label}}</a>
+        {% endif %} 
+    </li>
+{% endfor %}
+</ul>
