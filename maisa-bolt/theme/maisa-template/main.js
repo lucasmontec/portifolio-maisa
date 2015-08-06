@@ -64,6 +64,18 @@ function buildWall(){
     });
     
     $(window).trigger("resize");
+    
+    makeJobsClickable();
+}
+
+function makeJobsClickable(){
+    $( ".trab" ).click(
+        function(){
+            sessionStorage.currentPlate = 'trabalho';
+            sessionStorage.trabalho = $(this).data("ajax-link");
+            fetchState();
+        }
+    );
 }
 
 //Store mode
@@ -109,6 +121,18 @@ function fetchState(){
             }, 100);
         });
     }
+    
+        if(sessionStorage.currentPlate == 'trabalho'){
+        $.get(
+            sessionStorage.trabalho,
+            function( data ) {
+                $( "#insert" ).html( data );
+                setTimeout(function(){
+                    $( "#insert" ).fadeIn("slow","swing");
+                }, 100);
+            }
+        );
+    }
 }
 
 //Build the wall
@@ -131,21 +155,26 @@ $(document).ready(function() {
       }, 100);
     });*/
     
+    $("#filter-all").click(
+        function(){
+            sessionStorage.currentPlate = 'all';
+            fetchState();
+        }
+    );
     
-    $("#filter-all").click(function(){
-        sessionStorage.currentPlate = 'all';
-        fetchState();
-    });
-    
-    $("#filter-art").click(function(){
-        sessionStorage.currentPlate = 'ilustra';
-        fetchState();
-    });
+    $("#filter-art").click(
+        function(){
+            sessionStorage.currentPlate = 'ilustra';
+            fetchState();
+        }
+    );
 
-    $("#filter-design").click(function(){
-        sessionStorage.currentPlate = 'design';
-        fetchState();
-    });
+    $("#filter-design").click(
+        function(){
+            sessionStorage.currentPlate = 'design';
+            fetchState();
+        }
+    );
 });
 
 

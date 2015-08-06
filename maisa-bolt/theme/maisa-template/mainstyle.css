@@ -17,6 +17,8 @@ html{
     width: 100%;
     height: 60%;
 
+    z-index: -1;
+    
     background: rgba(255,255,255,1);
     background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,255,216,1) 100%);
     background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(0,255,216,1)));
@@ -94,6 +96,11 @@ html{
     width: 85%;
     padding: 0px;
 }
+.simplewall{
+    margin: 10% auto;
+    width: 85%;
+    padding: 0px;
+}
 
 /* 1 - standart (1x1)*/
 .brick {
@@ -140,30 +147,4 @@ html{
     .tall{
         width: 100%;
     }
-}
-
-/* images */
-
-.bio{
-    background-image: url("imgs/bio3.png");
-}
-
-.ve{
-    background-image: url("imgs/ve1.png");
-}
-
-.carva{
-    background-image: url("imgs/carvalab.png");
-}
-
-.fiore{
-    background-image: url("imgs/fiore.png");
-}
-
-.ciclo{
-    background-image: url("imgs/ciclo.png");
-}
-
-.fogao{
-     background-image: url("imgs/fogao.png");
 }

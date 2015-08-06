@@ -13,10 +13,8 @@
             {% for trabalho in trabalhos %}
         
             {% if trabalho.imagem!="" %}
-            <a href="{{ trabalho.link }}">
-                <div class="brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
-                </div>
-            </a>
+            <div data-ajax-link="{{ trabalho.link }}" class="trab brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+            </div>
             {% endif %}
         
             {% endfor %}
