@@ -74,35 +74,47 @@ function beginState(){
 }
 
 function fetchState(){
+    $( "#insert" ).hide();
+    
     if(sessionStorage.currentPlate == 'all'){
-        $.get( "/maisa-bolt/trabalhos", { filter: "all" }, function( data ) {
+        $.get( location.href+"trabalhos", { filter: "all" }, function( data ) {
             $( "#insert" ).html( data );
-            console.log(data);
             setTimeout(function(){
                 buildWall();
             }, 5);
+            setTimeout(function(){
+                $( "#insert" ).fadeIn("slow","swing");
+            }, 100);
         });
     }
     if(sessionStorage.currentPlate == 'ilustra'){
-        $.get( "/maisa-bolt/trabalhos", { filter: "ilustra" }, function( data ) {
+        $.get( location.href+"trabalhos", { filter: "ilustra" }, function( data ) {
             $( "#insert" ).html( data );
             setTimeout(function(){
                 buildWall();
             }, 5);
+            setTimeout(function(){
+                $( "#insert" ).fadeIn("slow","swing");
+            }, 100);
         });
     }
     if(sessionStorage.currentPlate == 'design'){
-        $.get( "/maisa-bolt/trabalhos", { filter: "design" }, function( data ) {
+        $.get( location.href+"trabalhos", { filter: "design" }, function( data ) {
             $( "#insert" ).html( data );
             setTimeout(function(){
                 buildWall();
             }, 5);
+            setTimeout(function(){
+                $( "#insert" ).fadeIn("slow","swing");
+            }, 100);
         });
     }
 }
 
 //Build the wall
 $(document).ready(function() {
+    //$("body").css("overflow", "hidden");
+    
     calcCellH();
         
     buildWall();

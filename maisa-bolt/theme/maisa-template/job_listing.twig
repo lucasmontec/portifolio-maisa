@@ -4,8 +4,11 @@
 
     <div id="freewall">
         
+        <!-- store filter -->
+        {% set requestFilter = app.request.get('filter') %}
+        
         <!--all stuff -->
-        {% if app.request.get('filter') == 'all' %}
+        {% if requestFilter == 'all' %}
         
             {% for trabalho in trabalhos %}
         
@@ -20,30 +23,25 @@
         
         {% endif %}
         
-        <!--art or ilustra stuff -->
-        {% if app.request.get('filter') == 'ilustra' %}
+        <!--filtered stuff -->
+        {% if requestFilter == 'ilustra' or requestFilter == 'design'  %}
         
             {% for trabalho in trabalhos %}
-
-            {% if trabalho.imagem!="" and trabalho.tipo=="ilustra" %}
-            <a href="{{ trabalho.link }}">
-                <div class="brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
-                </div>
-            </a>
+            
+            <!--Size css -->
+            {% set customcss = "" %}
+            {% if trabalho.tamanho == "alto" %}
+                {% set customcss = "tall" %}
             {% endif %}
         
-            {% endfor %}
+            {% if trabalho.tamanho == "grande" %}
+                {% set customcss = "big" %}
+            {% endif %}
         
-        {% endif %}
-
-        <!--design stuff -->
-        {% if app.request.get('filter') == 'design' %}
-        
-            {% for trabalho in trabalhos %}
-
-            {% if trabalho.imagem!="" and trabalho.tipo=="design" %}
+            <!--ilustra stuff -->
+            {% if trabalho.imagem!="" and trabalho.tipo==requestFilter %}
             <a href="{{ trabalho.link }}">
-                <div class="brick" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+                <div class="brick {{ customcss }}" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
                 </div>
             </a>
             {% endif %}

@@ -5,6 +5,10 @@
 @font-face { font-family: GothicBoldItalic; src: url('fonts/GOTHICBI.TTF'); } 
 @font-face { font-family: GothicItalic; src: url('fonts/GOTHICI.TTF'); } 
 
+html{
+    overflow-y: scroll;   
+}
+
 /* Fundo */
 #back-gradient{
     position: fixed;
