@@ -155,7 +155,7 @@ $(document).ready(function() {
       }, 100);
     });*/
     
-    $("#filter-all").click(
+    $("#filter-all,#name").click(
         function(){
             sessionStorage.currentPlate = 'all';
             fetchState();
