@@ -38,10 +38,8 @@
         
             <!--ilustra stuff -->
             {% if trabalho.imagem!="" and trabalho.tipo==requestFilter %}
-            <a href="{{ trabalho.link }}">
-                <div class="brick {{ customcss }}" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
-                </div>
-            </a>
+            <div data-ajax-link="{{ trabalho.link }}" class="trab brick {{ customcss }}" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+            </div>
             {% endif %}
         
             {% endfor %}

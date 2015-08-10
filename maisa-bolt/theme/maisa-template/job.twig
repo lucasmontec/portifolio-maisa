@@ -2,21 +2,25 @@
 <div class="container">
 
     <div class="simplewall">
-        <h2 class="" data-bolt-field="title">{{ trabalho.titulo }}</h2>
-        <h3 class="">{{ trabalho.subtitulo }}</h3>
-        {% if trabalho.conteudo|length > 0 %}
-            <div class="">
-            {{ trabalho.conteudo }}
-            </div>
-        {% endif %}
-
+        
         {% if trabalho.imagem!="" %}
-            <div class="imageholder">
-                <a href="{{ image(trabalho.imagem) }}">
-                    <img src="{{ thumbnail(trabalho.imagem, 400, 260) }}">
-                </a>
+        <div class="job-line">
+            <div class="job-image" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
             </div>
+        </div>
         {% endif %}
+        
+        <div class="job-description">
+            <h2 class="job-title" data-bolt-field="title">{{ trabalho.titulo }}</h2>
+            <!-- <h3 class="">{{ trabalho.subtitulo }}</h3> -->
+
+            {% if trabalho.conteudo|length > 0 %}
+                <div class="">
+                {{ trabalho.conteudo }}
+                </div>
+            {% endif %}
+        </div>
+        
     </div>
 
 </div>
