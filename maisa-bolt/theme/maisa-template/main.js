@@ -143,6 +143,10 @@ function fetchState(){
     }
 }
 
+function changeClass(element, classa, classb){
+    element.removeClass(classa).addClass(classb);
+}
+
 //Build the wall
 $(document).ready(function() {
     //$("body").css("overflow", "hidden");
@@ -168,6 +172,9 @@ $(document).ready(function() {
         function(){
             sessionStorage.currentPlate = 'all';
             fetchState();
+            changeClass($("#filter-design-i"),"menu-design-v", "menu-design");
+            changeClass($("#filter-art-i"),"menu-ilustra-v", "menu-ilustra");
+            changeClass($("#filter-all-i"),"menu-circulo-v", "menu-circulo");
         }
     );
     
@@ -175,6 +182,9 @@ $(document).ready(function() {
         function(){
             sessionStorage.currentPlate = 'ilustra';
             fetchState();
+            changeClass($("#filter-all-i"),"menu-circulo", "menu-circulo-v");
+            changeClass($("#filter-design-i"),"menu-design", "menu-design-v");
+            changeClass($("#filter-art-i"),"menu-ilustra-v", "menu-ilustra");
         }
     );
 
@@ -182,6 +192,9 @@ $(document).ready(function() {
         function(){
             sessionStorage.currentPlate = 'design';
             fetchState();
+            changeClass($("#filter-all-i"),"menu-circulo", "menu-circulo-v");
+            changeClass($("#filter-art-i"),"menu-ilustra", "menu-ilustra-v");
+            changeClass($("#filter-design-i"),"menu-design-v", "menu-design");
         }
     );
 });

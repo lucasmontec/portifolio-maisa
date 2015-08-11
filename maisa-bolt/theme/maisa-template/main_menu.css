@@ -1,0 +1,51 @@
+
+/* Cabeçalho - Menu central (conteudo) */
+#menu{
+    position: absolute;
+    top: 50px;
+    text-align: center;
+    width: 100%;
+    z-index: -1;
+}
+#menu ul{
+    list-style-type: none;
+    padding:0;
+}
+#menu li{
+    display:inline;
+    margin-left: 10px;
+}
+
+/* MENU SUPERIOR - INDEX */
+.menu-item{
+    background-size: cover;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu-design{
+    background-image: url("imgs/menu_superior/p_design.png");
+}
+
+.menu-design-v{
+    background-image: url("imgs/menu_superior/v_design.png");
+}
+
+.menu-circulo{
+    background-image: url("imgs/menu_superior/p_circulo.png");
+}
+
+.menu-circulo-v{
+    background-image: url("imgs/menu_superior/v_circulo.png");
+}
+
+.menu-ilustra{
+    background-image: url("imgs/menu_superior/p_ilustras.png");
+}
+
+.menu-ilustra-v{
+    background-image: url("imgs/menu_superior/v_ilustras.png");
+}
