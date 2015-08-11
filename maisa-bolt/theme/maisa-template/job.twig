@@ -20,7 +20,17 @@
                 </div>
             {% endif %}
         </div>
-        
+    
     </div>
-
+    
+    {% set currTipo = trabalho.tipo %}
+    {% set previous = trabalho.previous('datepublish', { tipo: currTipo }) %}
+    {% set next = trabalho.next('datepublish', { tipo: currTipo }) %}
+    <!-- {{ dump(next) }} -->
+    <!-- {{ dump(previous) }} -->
+    <div class="job-bottom-menu">
+        <div id="jbmenu-prev" onclick="go('{{ previous.link }}');" class="jbmenu-item jbmenu-prev"></div>
+        <div id="jbmenu-center" onclick="jbmenuCenter();" class="jbmenu-center"></div>
+        <div id="jbmenu-next" onclick="go('{{ next.link }}');" class="jbmenu-item jbmenu-next"></div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 .simplewall{
-    margin: 10% auto;
+    margin: 150px auto;
+    margin-bottom: 60px;
     width: 85%;
     padding: 0px;
 }
@@ -15,7 +16,7 @@
 }
 
 .job-description{
-    width: 40%;
+    width: 32%;
     margin-left: 1%;
     height: auto;
     display: inline-block;
@@ -25,7 +26,7 @@
 }
 
 .job-line{
-    width: 56%;
+    width: 66%;
     display: inline-block;
     border-style: none solid none none;
     /*border-width: 6px;
@@ -37,4 +38,54 @@
 
 .job-title{
     margin-bottom: 2%;
+}
+
+.job-bottom-menu{
+    width: 85%;
+    padding: 0px;
+    z-index: 10;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    
+    text-align:center;
+    
+    border-style: solid none none none;
+    border-width: 7px;
+    border-color: #00ffd8;
+    margin-top: -7px;
+}
+
+.jbmenu-item{
+    width: 25px;
+    height: 46px;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    margin: 0px;
+    
+    cursor: pointer;
+}
+
+.jbmenu-center{
+    width: 46px;
+    height: 46px;
+    background-position: center;
+    background-size: cover;
+    display: inline-block;
+    margin: 0px;
+    
+    cursor: pointer;
+    
+    background-image: url("imgs/trampos/mais.png");
+}
+
+.jbmenu-next{
+    background-image: url("imgs/trampos/proximo.png");
+    float:right;
+}
+
+.jbmenu-prev{
+    background-image: url("imgs/trampos/anterior.png");
+    float:left;
 }

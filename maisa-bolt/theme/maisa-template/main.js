@@ -43,7 +43,7 @@ function calcCellH() {
             w_bestCellH = 20; 
         }
     }
-    console.log("screen: "+w_width+" "+w_height+" using cell h: "+w_bestCellH);
+    //console.log("screen: "+w_width+" "+w_height+" using cell h: "+w_bestCellH);
 }
 
 function buildWall(){
@@ -79,6 +79,7 @@ function buildWall(){
 function makeJobsClickable(){
     $( ".trab" ).click(
         function(){
+            sessionStorage.lastPlate = sessionStorage.currentPlate;
             sessionStorage.currentPlate = 'trabalho';
             sessionStorage.trabalho = $(this).data("ajax-link");
             fetchState();
@@ -90,6 +91,7 @@ function makeJobsClickable(){
 function beginState(){
     if(sessionStorage.currentPlate == undefined){
         sessionStorage.currentPlate = 'all';
+        sessionStorage.lastPlate = 'all';
     }
 }
 
@@ -130,9 +132,8 @@ function fetchState(){
         });
     }
     
-        if(sessionStorage.currentPlate == 'trabalho'){
-        $.get(
-            sessionStorage.trabalho,
+    if(sessionStorage.currentPlate == 'trabalho'){
+        $.get(sessionStorage.trabalho,
             function( data ) {
                 $( "#insert" ).html( data );
                 setTimeout(function(){
