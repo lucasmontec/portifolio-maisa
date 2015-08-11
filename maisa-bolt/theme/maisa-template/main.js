@@ -1,5 +1,5 @@
 "use strict";
-// jQuery
+// Code
 
 //Calculate cell height
 var w_width = 0;
@@ -41,7 +41,9 @@ function calcCellH() {
 }
 
 function buildWall(){
+
     var wall = new freewall("#freewall");
+
 	wall.reset({
 		selector: '.brick',
         animate: false,
@@ -152,7 +154,8 @@ $(document).ready(function() {
         window.RT = setTimeout(function()
       {
         this.location.reload(false);
-      }, 100);
+        //buildWall();
+      }, 50);
     });*/
     
     $("#filter-all,#name").click(
