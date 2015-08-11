@@ -11,6 +11,16 @@
     background-size: cover;
 }
 
+.job-image-with-gallery{
+    width: 96%;
+    background-position: center;
+    background-size: cover;
+}
+
+.job-image-with-gallery:before{
+    content: ""; display: block; padding-top: 45%;
+}
+
 .job-image:before{
     content: ""; display: block; padding-top: 55%;
 }

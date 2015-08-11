@@ -3,9 +3,15 @@
 
     <div class="simplewall">
         
-        {% if trabalho.imagem!="" %}
+        {% set jobimagecss = 'job-image' %}
+        {% if trabalho.galeria|length > 0 %}
+            {% set jobimagecss = 'job-image-with-gallery' %}
+        {% endif %}
+        
+        
+        {% if trabalho.imagem != "" %}
         <div class="job-line">
-            <div class="job-image" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+            <div class="{{ jobimagecss }}" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
             </div>
         </div>
         {% endif %}
@@ -21,6 +27,13 @@
             {% endif %}
         </div>
     
+        <div class="job-gallery">
+            {% for imggaleria in trabalho.galeria %}
+            <!-- {{dump(imggaleria)}} -->
+            <div class="job-gallery-image" style="background-image: url({{ imageinfo(imggaleria.title).url }});">
+            </div>
+            {% endfor %}
+        </div>
     </div>
     
     {% set currTipo = trabalho.tipo %}

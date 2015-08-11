@@ -4,10 +4,6 @@ function jbmenuCenter(){
     fetchState();
 }
 
-function happy(text){
-    console.log("Hi, "+text+"!");
-}
-
 function go(link){
     if(link.length > 0){
         sessionStorage.currentPlate = "trabalho";
