@@ -22,9 +22,9 @@ $(document).ready(function() {
             $('#back-gradient').css("opacity", 0.5+((Math.sin(T/40)+1)/4) );
             
             //Restore menu
-            current = $('#menu').css("opacity");
+            //current = $('#menu').css("opacity");
             if($('#menu').css("opacity") < 1){
-                $('#menu').css("opacity", current+0.1);
+                $('#menu').css("opacity", 1);
             }
         }
         

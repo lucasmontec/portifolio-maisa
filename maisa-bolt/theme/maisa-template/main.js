@@ -1,5 +1,6 @@
 "use strict";
 // Code
+var wall = undefined;
 
 //Calculate cell height
 var w_width = 0;
@@ -10,6 +11,7 @@ var cellHForBrowserSize = [
     {size: "1903x1080", cellH: 42},
     {size: "1869x899", cellH: 20},
     {size: "1263x800", cellH: 20},
+    {size: "1263x619", cellH: 20},
     {size: "1349x768", cellH: 42},
     {size: "1263x1024", cellH: 20},
     {size: "1423x900", cellH: 15},
@@ -35,14 +37,18 @@ function calcCellH() {
     if (found !== undefined) {
         w_bestCellH = found.cellH;
     }else{
-        w_bestCellH = 42;
+        if(w_width > 1100){
+            w_bestCellH = 42;
+        }else{
+            w_bestCellH = 20; 
+        }
     }
     console.log("screen: "+w_width+" "+w_height+" using cell h: "+w_bestCellH);
 }
 
 function buildWall(){
 
-    var wall = new freewall("#freewall");
+    wall = new freewall("#freewall");
 
 	wall.reset({
 		selector: '.brick',
@@ -61,7 +67,7 @@ function buildWall(){
 		gutterX: 12,
 		gutterY: 12,
 		onResize: function() {
-		  wall.fitZone();
+            wall.fitZone();
 		}
     });
     
@@ -97,8 +103,8 @@ function fetchState(){
                 buildWall();
             }, 5);
             setTimeout(function(){
-                $( "#insert" ).fadeIn("slow","swing");
-            }, 100);
+                $( "#insert" ).fadeIn();
+            }, 70);
         });
     }
     if(sessionStorage.currentPlate == 'ilustra'){
@@ -108,8 +114,8 @@ function fetchState(){
                 buildWall();
             }, 5);
             setTimeout(function(){
-                $( "#insert" ).fadeIn("slow","swing");
-            }, 100);
+                $( "#insert" ).fadeIn();
+            }, 70);
         });
     }
     if(sessionStorage.currentPlate == 'design'){
@@ -119,8 +125,8 @@ function fetchState(){
                 buildWall();
             }, 5);
             setTimeout(function(){
-                $( "#insert" ).fadeIn("slow","swing");
-            }, 100);
+                $( "#insert" ).fadeIn();
+            }, 70);
         });
     }
     
@@ -131,7 +137,7 @@ function fetchState(){
                 $( "#insert" ).html( data );
                 setTimeout(function(){
                     $( "#insert" ).fadeIn("slow","swing");
-                }, 100);
+                }, 70);
             }
         );
     }
@@ -180,5 +186,31 @@ $(document).ready(function() {
     );
 });
 
+
+$(function() {
+    var $window = $(window);
+    var width = $window.width();
+    var height = $window.height();
+
+    setInterval(function () {
+        if ((width != $window.width()) || (height != $window.height())) {
+            width = $window.width();
+            height = $window.height();
+
+            if(sessionStorage.currentPlate != 'trabalho'){
+                if (window.RT){
+                }else{
+                    window.RT = setTimeout(function(){
+                        calcCellH();
+                        fetchState();
+                        clearTimeout(window.RT);
+                        window.RT = undefined;
+                    }, 1000);
+                }
+            }
+            //console.log("resize");
+        }
+    }, 300);
+});
 
 
