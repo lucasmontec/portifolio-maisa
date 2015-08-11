@@ -24,6 +24,9 @@ pages:
             uses: title
         image:
             type: image
+        teaser:
+            type: html
+            height: 150px
         body:
             type: html
             height: 300px
@@ -256,43 +259,3 @@ showcases:
 # checkbox - integer - checkbox-field which is 1 (checked) or 0 (unchecked)
 
 # number (deprecated) - input type decimal(18,9), useful for storing number that need to be sortable
-
-trabalhos:
-    name: Trabalhos
-    singular_name: Trabalho
-    fields:
-        titulo:
-            type: text
-            class: large
-            group: content
-        slug:
-            type: slug
-            uses: titulo
-        subtitulo:
-            type: html
-            height: 150px
-        conteudo:
-            type: html
-            height: 300px
-        imagem:
-            type: image
-            attrib: title # Note: retrieve this in your template with {{ record.values.image.title }}
-            group: media
-        thumb:
-            type: image
-            attrib: thumbimg
-            group: media
-        tamanho:
-            type: select
-            values: [ normal, alto, grande ]
-        tipo:
-            type: select
-            values: [ ilustra, design, outro ]
-        galeria:
-            type: imagelist
-    record_template: job.twig
-    listing_template: job_listing.twig
-    listing_records: 9
-    default_status: publish
-    sort: -datepublish
-    recordsperpage: 8
