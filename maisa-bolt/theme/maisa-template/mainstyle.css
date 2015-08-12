@@ -6,7 +6,8 @@
 @font-face { font-family: GothicItalic; src: url('fonts/GOTHICI.TTF'); } 
 
 html{
-    overflow-y: scroll;   
+    overflow-y: scroll; 
+    overflow-x: hidden;
 }
 
 /* Fundo */

@@ -1,18 +1,20 @@
+/* job body (description + main image + gallery) */
 .simplewall{
     margin: 150px auto;
-    margin-bottom: 60px;
+    margin-bottom: 30px;
     width: 85%;
     padding: 0px;
 }
 
+/* job main images */
 .job-image{
-    width: 96%;
+    width: 98.2%;
     background-position: center;
     background-size: cover;
 }
 
 .job-image-with-gallery{
-    width: 96%;
+    width: 98.2%;
     background-position: center;
     background-size: cover;
 }
@@ -22,9 +24,10 @@
 }
 
 .job-image:before{
-    content: ""; display: block; padding-top: 55%;
+    content: ""; display: block; padding-top: 60%;
 }
 
+/* job main text (description) */
 .job-description{
     width: 32%;
     margin-left: 1%;
@@ -35,6 +38,7 @@
     vertical-align:top;
 }
 
+/* This is a holder to the image to add the 'right' line on the image*/
 .job-line{
     width: 66%;
     display: inline-block;
@@ -46,17 +50,40 @@
     margin-right: -1px;
 }
 
+/* The job main title (name) */
 .job-title{
     margin-bottom: 2%;
 }
 
+/* Gallery styles */
+.job-gallery{
+    width: 100%;
+    margin-top: 8px;
+    white-space : nowrap; /* this does the trick */
+}
+.job-gallery-image{
+    width: 30%;  
+    margin-right: 8px;
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+}
+.job-gallery-image:before{
+    content: ""; display: block; padding-top: 45%;
+}
+
+/* The job next-prev-selection menu */
 .job-bottom-menu{
     width: 85%;
     padding: 0px;
     z-index: 10;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 30px;
+    padding-top: 18px;
+    
+    position: absolute;
+    bottom: 2%;
+    left: 7.5%;
     
     text-align:center;
     
@@ -66,9 +93,10 @@
     margin-top: -7px;
 }
 
+/* general item to set the menu item sizes (both next and prev) */
 .jbmenu-item{
-    width: 25px;
-    height: 46px;
+    width: 18px;
+    height: 33px;
     background-position: center;
     background-size: cover;
     display: inline-block;
@@ -77,9 +105,10 @@
     cursor: pointer;
 }
 
+/* center is a litle different (image is a square) so we can't use menu-item */
 .jbmenu-center{
-    width: 46px;
-    height: 46px;
+    width: 33px;
+    height: 33px;
     background-position: center;
     background-size: cover;
     display: inline-block;
