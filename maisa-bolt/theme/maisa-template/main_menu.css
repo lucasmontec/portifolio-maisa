@@ -11,12 +11,23 @@
     list-style-type: none;
     padding:0;
 }
-#menu li{
+#menu ul li{
     display:inline;
     margin-left: 10px;
 }
 
 /* MENU SUPERIOR - INDEX */
+.menu-text{
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+    font-family: GothicItalic;
+    font-size: 21px;
+}
+
 .menu-item{
     background-size: cover;
     background-position: center;
@@ -24,6 +35,7 @@
     height: 80px;
     display: inline-block;
     cursor: pointer;
+    vertical-align: middle;
 }
 
 .menu-design{

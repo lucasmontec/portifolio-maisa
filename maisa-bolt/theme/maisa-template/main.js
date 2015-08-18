@@ -6,35 +6,48 @@ var wall = undefined;
 var w_width = 0;
 var w_height = 0;
 var w_bestCellH = 42;
+var sz_tolerance = 250;
 var cellHForBrowserSize = [
-    {size: "1903x979", cellH: 42},
-    {size: "1903x1080", cellH: 42},
-    {size: "1869x899", cellH: 20},
-    {size: "1263x800", cellH: 20},
-    {size: "1263x619", cellH: 20},
-    {size: "1349x768", cellH: 42},
-    {size: "1263x1024", cellH: 20},
-    {size: "1423x900", cellH: 15},
-    {size: "1583x900", cellH: 42},
-    {size: "1663x1050", cellH: 42},
-    {size: "1903x1200", cellH: 42},
-    {size: "2543x1440", cellH: 20},
-    {size: "1148x415", cellH: 20}
+    {sizew: 1903 , sizeh: 979, cellH: 42},
+    {sizew: 1903 , sizeh: 1080, cellH: 42},
+    {sizew: 1869 , sizeh: 899, cellH: 20},
+    {sizew: 1263 , sizeh: 800, cellH: 20},
+    {sizew: 1263 , sizeh: 619, cellH: 20},
+    {sizew: 1349 , sizeh: 768, cellH: 42},
+    {sizew: 1263 , sizeh: 1024, cellH: 20},
+    {sizew: 1423 , sizeh: 900, cellH: 15},
+    {sizew: 1583 , sizeh: 900, cellH: 42},
+    {sizew: 1663 , sizeh: 1050, cellH: 42},
+    {sizew: 1903 , sizeh: 1200, cellH: 42},
+    {sizew: 2543 , sizeh: 1440, cellH: 20},
+    {sizew: 1148 , sizeh: 415, cellH: 20}
 ];
 
-function getByValue(arr, value) {
-  for (var i=0, iLen=arr.length; i<iLen; i++) {
-    if (arr[i].size == value) return arr[i];
-  }
+function inRange(val, min, max){
+    return val >= min && val <= max
+}
+
+function toleranceRange(val, near, tolerance){
+    return inRange(val, near-tolerance, near+tolerance)
+}
+
+function getByValue(arr, ww, wh) {
+    for (var i=0, iLen=arr.length; i<iLen; i++) {
+        if (
+            toleranceRange(arr[i].sizew,ww,sz_tolerance)
+            &&
+            toleranceRange(arr[i].sizeh,wh,sz_tolerance)
+           )
+        return arr[i];
+    }
 }
 
 function calcCellH() {
     w_width = $(window).width();
     w_height = $(window).height();
-    var key = w_width + "x" + w_height;
-    console.log("key: "+key);
-    var found = getByValue(cellHForBrowserSize, key);
+    var found = getByValue(cellHForBrowserSize, w_width, w_height);
     if (found !== undefined) {
+        //console.log(found)
         w_bestCellH = found.cellH;
     }else{
         if(w_width > 1100){
@@ -196,6 +209,34 @@ $(document).ready(function() {
             changeClass($("#filter-all-i"),"menu-circulo", "menu-circulo-v");
             changeClass($("#filter-art-i"),"menu-ilustra", "menu-ilustra-v");
             changeClass($("#filter-design-i"),"menu-design-v", "menu-design");
+        }
+    );
+    
+    
+    //Hover for top menu
+    $( "#filter-art-t" ).hide();
+    $( "#filter-design-t" ).hide();
+    $("#filter-art").hover(
+        function (){
+            $( "#filter-art-i" ).hide();
+            $( "#filter-art-t" ).show();
+        }
+    ,
+        function (){
+            $( "#filter-art-i" ).show();
+            $( "#filter-art-t" ).hide();
+        }
+    );
+    
+    $("#filter-design").hover(
+        function (){
+            $( "#filter-design-i" ).hide();
+            $( "#filter-design-t" ).show();
+        }
+    ,
+        function (){
+            $( "#filter-design-i" ).show();
+            $( "#filter-design-t" ).hide();
         }
     );
 });
