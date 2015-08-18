@@ -30,7 +30,10 @@
         {% if trabalho.galeria|length > 0 %}
         <script>
             $(function() {
-                $( ".job-gallery" ).draggable({ axis: "x" });
+                $( ".job-gallery" ).draggable({
+                    axis: "x",
+                    scroll: false
+                });
             });
         </script>
         <div class="job-gallery">
