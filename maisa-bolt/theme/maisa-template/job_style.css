@@ -20,7 +20,7 @@
 }
 
 .job-image-with-gallery:before{
-    content: ""; display: block; padding-top: 45%;
+    content: ""; display: block; padding-top: 50%;
 }
 
 .job-image:before{
@@ -58,7 +58,7 @@
 /* Gallery styles */
 .job-gallery{
     width: 100%;
-    margin-top: 8px;
+    margin-top: 12px;
     white-space : nowrap; /* this does the trick */
 }
 .job-gallery-image{
@@ -69,7 +69,7 @@
     background-size: cover;
 }
 .job-gallery-image:before{
-    content: ""; display: block; padding-top: 45%;
+    content: ""; display: block; padding-top: 54.1%;
 }
 
 /* The job next-prev-selection menu */
@@ -79,11 +79,11 @@
     z-index: 10;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 18px;
+    padding-top: 8px;
     
-    position: absolute;
+    /*position: absolute;
     bottom: 2%;
-    left: 7.5%;
+    left: 7.5%;*/
     
     text-align:center;
     
@@ -91,6 +91,8 @@
     border-width: 7px;
     border-color: #00ffd8;
     margin-top: -7px;
+    
+    margin-bottom: 10px;
 }
 
 /* general item to set the menu item sizes (both next and prev) */
