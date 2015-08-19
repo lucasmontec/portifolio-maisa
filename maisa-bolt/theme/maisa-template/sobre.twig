@@ -1,0 +1,28 @@
+{% include '_header.twig' %}
+        <!-- Conteúdo principal - A barriga do site -->
+        <div class="container">
+
+            <script> gradient(false); </script>
+            
+            <div class="sobre-body">
+
+                {% if record.image != "" %}
+                <div class="sobre-image" style="background-image: url({{ imageinfo(page.image).url }});">
+                </div>
+                {% endif %}
+                
+                <div class="sobre-text">               
+                    <h2 class="sobre-title" data-bolt-field="title">{{ record.title }}</h2>
+
+                    {% if page.body|length > 0 %}
+                        <div class="sobre-description">
+                        {{ page.body }}
+                        </div>
+                    {% endif %}
+                </div> 
+            </div>
+            
+		</div>
+		
+	</body>
+</html>

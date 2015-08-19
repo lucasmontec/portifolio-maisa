@@ -1,3 +1,8 @@
+var showGradient = true;
+
+function gradient(val){
+    showGradient = val;
+}
 
 $(document).ready(function() {
     var T = 0;
@@ -5,7 +10,7 @@ $(document).ready(function() {
         T++;
         var current;
         
-        if(sessionStorage.currentPlate == 'trabalho'){
+        if(sessionStorage.currentPlate == 'trabalho' || !showGradient){
             //Remove backgradient on job page
             current = $('#back-gradient').css("opacity");
             //console.log(current);

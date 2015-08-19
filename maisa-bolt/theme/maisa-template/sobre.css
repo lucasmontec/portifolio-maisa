@@ -1,0 +1,60 @@
+/* container do corpo principal das paginas */
+.sobre-body{
+    margin: 150px auto;
+    width: 65%;
+    height: 500px;
+    padding: 0px;
+}
+
+/* Imagem da pagina (se tiver) */
+.sobre-image{
+    background-position: center;
+    background-size: cover;
+    
+    display: inline-block;
+    
+    width: 45%;
+}
+
+.sobre-image:before {
+	content: ""; display: block; padding-top: 110%;
+}
+
+.sobre-text{
+    display: inline-block;
+    vertical-align: top;
+    
+    border-style: none none none solid;
+    border-width: 1px;
+    border-color: #000;
+    
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-left: 25px;
+    
+    width: 44%;
+}
+
+/*titulo das paginas (sub paginas: sobre, contato)*/
+.sobre-title{
+    font-family: Century;
+    font-size: 32px;
+    margin: 0 0 25px 0;
+}
+
+.sobre-description{
+    height: 60%;
+}
+.sobre-description p{
+    font-family: CenturyGothic;
+    text-align: justify;
+    text-justify: auto;
+    hyphens: auto;
+    
+    font-size: 14px;
+    line-height: 18px;
+}
+.sobre-description b{
+    font-family: GothicBold;
+    font-weight: normal;
+}
