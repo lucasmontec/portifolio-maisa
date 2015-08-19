@@ -37,13 +37,8 @@
             });
         </script>
         <div class="job-gallery">
-            {% for imggaleria in trabalho.galeria %}
-            <!-- {{dump(imggaleria)}} -->
-            <a href="{{ imageinfo(imggaleria.title).url }}" data-lightbox="galeria">
-                <div class="job-gallery-image" style="background-image: url({{ imageinfo(imggaleria.title).url }});">
-                </div>
-            </a>
-            {% endfor %}
+            {% for imggaleria in trabalho.galeria %}<a class="job-imagelink" href="{{ imageinfo(imggaleria.title).url }}" data-lightbox="galeria"><div class="job-gallery-image" style="background-image: url({{ imageinfo(imggaleria.title).url }});">
+                </div></a>{% endfor %}
             <script src="{{ paths.theme }}js/lightbox.js"></script>
         </div>
         {% endif %}
