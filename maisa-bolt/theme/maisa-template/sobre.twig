@@ -11,15 +11,20 @@
                 </div>
                 {% endif %}
                 
-                <div class="sobre-text">               
-                    <h2 class="sobre-title" data-bolt-field="title">{{ record.title }}</h2>
+                <div class="sobre-text">     
+                    <div class="sobre-line">
+                        <h2 class="sobre-title" data-bolt-field="title">{{ record.title }}</h2>
 
-                    {% if page.body|length > 0 %}
-                        <div class="sobre-description">
-                        {{ page.body }}
-                        </div>
-                    {% endif %}
-                </div> 
+                        {% if page.body|length > 0 %}
+                            <div class="sobre-description">
+                            {{ page.body }}
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <a id="button-curriculo" href=".">currículo</a>
+                </div>
+
             </div>
             
 		</div>

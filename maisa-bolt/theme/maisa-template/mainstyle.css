@@ -125,7 +125,7 @@ html{
     content: ""; display: block; padding-top: 110%;
 }
 
-/* fix width issue < 1100 */
+/* small bricks forever when small screen */
 @media all and (max-width: 400px){
     .brick {
         width: 100%;

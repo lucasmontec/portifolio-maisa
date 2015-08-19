@@ -2,7 +2,6 @@
 .sobre-body{
     margin: 150px auto;
     width: 65%;
-    height: 500px;
     padding: 0px;
 }
 
@@ -20,19 +19,41 @@
 	content: ""; display: block; padding-top: 110%;
 }
 
-.sobre-text{
-    display: inline-block;
-    vertical-align: top;
+.sobre-line{
     
     border-style: none none none solid;
     border-width: 1px;
     border-color: #000;
-    
     padding-left: 20px;
     padding-bottom: 20px;
+    
+}
+
+.sobre-text{
+    display: inline-block;
+    vertical-align: top;
     margin-left: 25px;
     
-    width: 44%;
+    width: 50%;
+}
+
+/* Bottao de curriculo */
+#button-curriculo{
+    text-decoration: none;
+    color: black;
+    font-family: Century;
+    font-size: 20px;
+    line-height: 20px;
+    
+    padding: 13px 25px 14px 25px;
+    margin-left: 20px;
+
+    position: relative;
+    top: 40px;
+    
+    border-style: solid;
+    border-width: 4px;
+    border-color: #00FFD8;
 }
 
 /*titulo das paginas (sub paginas: sobre, contato)*/
@@ -57,4 +78,55 @@
 .sobre-description b{
     font-family: GothicBold;
     font-weight: normal;
+}
+.sobre-description a{
+    font-family: GothicItalic;
+    color: black;
+    font-weight: normal;
+}
+
+/*
+*
+* MEDIA QUERIES
+*
+*/
+
+/* if big, we align the text at center*/
+@media all and (min-width: 1400px) and (min-height: 800px){
+    .sobre-text{
+        vertical-align: middle;
+    }
+    .sobre-image{
+        vertical-align: middle;
+    }
+}
+
+@media all and (max-width: 890px){
+    .sobre-line {
+        border-style: none none solid none;
+        border-width: 1px;
+        border-color: #000;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 0;
+    }
+    .sobre-text{
+        margin-left: 0px;
+        display: block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .sobre-image{
+        display: block;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #button-curriculo{
+        
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
