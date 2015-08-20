@@ -182,6 +182,11 @@ $(document).ready(function() {
     beginState();
     fetchState();
     
+    //Mobile menu activation
+    $('#right-menu').slicknav({
+        label: ''   
+    });
+    
     /*$(window).bind('resize', function(e)
     {
       if (window.RT) clearTimeout(window.RT);

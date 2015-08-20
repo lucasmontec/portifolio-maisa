@@ -24,7 +24,7 @@ $(document).ready(function() {
                 $('#menu').css("opacity", current-0.1);
             }
         }else{
-            $('#back-gradient').css("opacity", 0.5+((Math.sin(T/40)+1)/4) );
+            $('#back-gradient').css("opacity", 0.4+((Math.sin(T/40)+1)/4) );
             
             //Restore menu
             //current = $('#menu').css("opacity");

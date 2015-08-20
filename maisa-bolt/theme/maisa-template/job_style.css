@@ -45,13 +45,15 @@
     border-style: none solid none none;
     /*border-width: 6px;
     border-color: #00ffd8;*/
-    border-width: 2px;
+    border-width: 1px;
     border-color: #000;
-    margin-right: -2px;
+    margin-right: -1px;
 }
 
 /* The job main title (name) */
 .job-title{
+    font-family: Century;
+    font-size: 30px;
     margin-bottom: 20px;
 }
 

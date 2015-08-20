@@ -12,7 +12,7 @@
     padding:0;
 }
 #menu ul li{
-    display:inline;
+    display:inline-block;
     margin-left: 10px;
 }
 
@@ -39,7 +39,7 @@
 }
 
 /* moves the filter menu down*/
-@media all and (max-width: 1020px){
+@media all and (max-width: 1140px){
     #menu {
         top: 140px;
     } 

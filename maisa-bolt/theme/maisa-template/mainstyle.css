@@ -89,7 +89,7 @@ html{
     margin-bottom: 0px;
 }
 
-/* 1 - standart (1x1)*/
+/* Brick sizes */
 .brick {
     width: 33%;
     background-color: #666;
@@ -140,7 +140,7 @@ html{
 }
 
 /* moves the content down */
-@media all and (max-width: 1020px) and (min-width: 450px){
+@media all and (max-width: 1140px) and (min-width: 450px){
     #freewall {
         margin-top: 290px;
     } 
@@ -172,23 +172,31 @@ html{
     }
 }
 
+/*
+* Mobile menu
+*/
+.slicknav_menu a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    margin-top: 7px;
+}
+.slicknav_menu a:not(.selected){
+    font-family: CenturyGothic;
+}
 
-/* Fix top menu when very small */
+/* Only show mobile menu when its time */
+.slicknav_menu {
+	display:none;
+}
+
+/* Top menu as a mobile menu */
 @media all and (max-width: 670px) and (min-width: 451px){
-    #right-menu li{
-        float: none;
-        margin-left: 0px;
-    }
-    .selected{
-        font-family: GothicBold;
-        border-style: none none none solid;
-        margin-left: -7px;
-    }
-    #right-menu a:hover{
-        border-style: none none none solid;
-        margin-left: -7px;
-    }
-    #right-menu a{
-        padding-left: 5px;
-    }
+    #right-menu {
+		display:none;
+	}
+	
+	.slicknav_menu {
+		display:block;
+	}
 }
