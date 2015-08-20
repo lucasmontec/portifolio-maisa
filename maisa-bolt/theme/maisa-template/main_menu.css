@@ -38,6 +38,27 @@
     vertical-align: middle;
 }
 
+/* moves the filter menu down*/
+@media all and (max-width: 1020px){
+    #menu {
+        top: 140px;
+    } 
+}
+
+/* moves the menu further */
+@media all and (max-width: 570px){
+    #menu {
+        top: 160px;
+    } 
+}
+
+/* moves the content down further*/
+@media all and (max-width: 450px){
+    #menu {
+        top: 210px;
+    } 
+}
+
 .menu-design{
     background-image: url("imgs/menu_superior/p_design.png");
 }

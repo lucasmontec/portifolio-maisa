@@ -6,13 +6,15 @@ var wall = undefined;
 var w_width = 0;
 var w_height = 0;
 var w_bestCellH = 42;
-var sz_tolerance = 250;
+var sz_tolerance = 40;
 var cellHForBrowserSize = [
     {sizew: 1903 , sizeh: 979, cellH: 42},
     {sizew: 1903 , sizeh: 1080, cellH: 42},
     {sizew: 1869 , sizeh: 899, cellH: 20},
     {sizew: 1263 , sizeh: 800, cellH: 20},
+    {sizew: 1313 , sizeh: 1080, cellH: 42},
     {sizew: 1263 , sizeh: 619, cellH: 20},
+    {sizew: 1518 , sizeh: 1080, cellH: 20},
     {sizew: 1349 , sizeh: 768, cellH: 42},
     {sizew: 1263 , sizeh: 1024, cellH: 20},
     {sizew: 1423 , sizeh: 900, cellH: 15},
@@ -20,7 +22,10 @@ var cellHForBrowserSize = [
     {sizew: 1663 , sizeh: 1050, cellH: 42},
     {sizew: 1903 , sizeh: 1200, cellH: 42},
     {sizew: 2543 , sizeh: 1440, cellH: 20},
-    {sizew: 1148 , sizeh: 415, cellH: 20}
+    {sizew: 1148 , sizeh: 415, cellH: 20},
+    {sizew: 1026 , sizeh: 1080, cellH: 42},
+    {sizew: 1044 , sizeh: 1080, cellH: 20},
+    {sizew: 1118 , sizeh: 1080, cellH: 60}
 ];
 
 function inRange(val, min, max){
@@ -46,16 +51,24 @@ function calcCellH() {
     w_width = $(window).width();
     w_height = $(window).height();
     var found = getByValue(cellHForBrowserSize, w_width, w_height);
-    if (found !== undefined) {
-        //console.log(found)
+    if (found !== undefined && w_width > 1000 ) {
         w_bestCellH = found.cellH;
     }else{
         if(w_width > 1100){
             w_bestCellH = 42;
         }else{
-            w_bestCellH = 20; 
+            if(w_width > 950){
+                if(w_width > 1000){
+                    w_bestCellH = 20;
+                }else{
+                    w_bestCellH = 150;   
+                }
+            }else{
+                w_bestCellH = 130;
+            }
         }
     }
+    console.log(w_bestCellH);
     //console.log("screen: "+w_width+" "+w_height+" using cell h: "+w_bestCellH);
 }
 
@@ -240,10 +253,10 @@ $(document).ready(function() {
     //Hide footer (need to wait load)
     if(window.location.href.indexOf("sobre") == -1 &&
               window.location.href.indexOf("contato") == -1){
-        console.log("hid");
+        //console.log("hid");
         $( ".footer-content" ).hide();
     }else{
-        console.log("show");
+        //console.log("show");
         $( ".footer-content" ).show();
     }
 });
