@@ -8,7 +8,6 @@
 		<title>
             {% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
             {{ app.config.get('general/sitename') }}
-            {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
         </title>
 		
 		<!-- Informação do site - meta -->
@@ -24,6 +23,7 @@
         <link rel="stylesheet" href="{{ paths.theme }}main_menu.css" type="text/css"/>
 		<link rel="stylesheet" href="{{ paths.theme }}css/lightbox.css" type="text/css"/>
         <link rel="stylesheet" href="{{ paths.theme }}sobre.css" type="text/css"/>
+        <link rel="stylesheet" href="{{ paths.theme }}footer.css" type="text/css"/>
         
 		<!-- Responsividade -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">

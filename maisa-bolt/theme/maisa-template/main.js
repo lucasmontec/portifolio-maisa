@@ -252,7 +252,10 @@ $(function() {
             width = $window.width();
             height = $window.height();
 
-            if(sessionStorage.currentPlate != 'trabalho'){
+            if(sessionStorage.currentPlate != 'trabalho' &&
+              window.location.href.indexOf("sobre") == 0 &&
+              window.location.href .indexOf("contato") == 0
+              ){
                 if (window.RT){
                 }else{
                     window.RT = setTimeout(function(){

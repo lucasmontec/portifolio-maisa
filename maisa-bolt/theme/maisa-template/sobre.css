@@ -1,6 +1,7 @@
 /* container do corpo principal das paginas */
 .sobre-body{
     margin: 150px auto;
+    margin-bottom: 0px;
     width: 65%;
     padding: 0px;
 }
@@ -101,7 +102,7 @@
     }
 }
 
-@media all and (max-width: 890px){
+@media all and (max-width: 1000px){
     .sobre-line {
         border-style: none none solid none;
         border-width: 1px;
