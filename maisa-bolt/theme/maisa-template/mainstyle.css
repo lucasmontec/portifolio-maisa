@@ -159,7 +159,7 @@ html{
         text-align: center;
     }
     #right-menu{
-        width: 64%;
+        width: 290px;
         height: 19px;
         display: block;
         position: relative;
@@ -174,7 +174,7 @@ html{
 
 
 /* Fix top menu when very small */
-@media all and (max-width: 670px) and (min-width: 450px){
+@media all and (max-width: 670px) and (min-width: 451px){
     #right-menu li{
         float: none;
         margin-left: 0px;
