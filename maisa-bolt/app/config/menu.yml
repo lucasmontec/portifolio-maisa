@@ -11,3 +11,20 @@ main:
     - label: contato
       path: contato/
       class: last
+
+footer:
+    - label: instagram
+      link: http://instagram.com
+      class: insta
+    - label: facebook
+      link: http://facebook.com
+      class: face
+    - label: pinterest
+      link: http://facebook.com
+      class: pinterest
+    - label: skype
+      link: skype:facebook:maisafernanda.oliveira?chat
+      class: skype
+    - label: spotify
+      link: http://facebook.com
+      class: spotify

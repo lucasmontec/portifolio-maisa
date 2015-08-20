@@ -110,38 +110,21 @@ function beginState(){
 
 function fetchState(){
     $( "#insert" ).hide();
+    $( ".footer-content" ).hide();
     
     if(sessionStorage.currentPlate == 'all'){
         $.get( location.href+"trabalhos", { filter: "all" }, function( data ) {
-            $( "#insert" ).html( data );
-            setTimeout(function(){
-                buildWall();
-            }, 5);
-            setTimeout(function(){
-                $( "#insert" ).fadeIn();
-            }, 70);
+            afterFetch(data);
         });
     }
     if(sessionStorage.currentPlate == 'ilustra'){
         $.get( location.href+"trabalhos", { filter: "ilustra" }, function( data ) {
-            $( "#insert" ).html( data );
-            setTimeout(function(){
-                buildWall();
-            }, 5);
-            setTimeout(function(){
-                $( "#insert" ).fadeIn();
-            }, 70);
+           afterFetch(data);
         });
     }
     if(sessionStorage.currentPlate == 'design'){
         $.get( location.href+"trabalhos", { filter: "design" }, function( data ) {
-            $( "#insert" ).html( data );
-            setTimeout(function(){
-                buildWall();
-            }, 5);
-            setTimeout(function(){
-                $( "#insert" ).fadeIn();
-            }, 70);
+            afterFetch(data);
         });
     }
     
@@ -152,9 +135,23 @@ function fetchState(){
                 setTimeout(function(){
                     $( "#insert" ).fadeIn("slow","swing");
                 }, 70);
+                $( ".footer-content" ).show();
             }
         );
     }
+}
+
+function afterFetch(data){
+    $( "#insert" ).html( data );
+    setTimeout(function(){
+        buildWall();
+    }, 5);
+    setTimeout(function(){
+        $( "#insert" ).fadeIn();
+    }, 70);
+    setTimeout(function(){
+        $( ".footer-content" ).show();
+    }, 80);
 }
 
 function changeClass(element, classa, classb){
@@ -239,6 +236,16 @@ $(document).ready(function() {
             $( "#filter-design-t" ).hide();
         }
     );
+    
+    //Hide footer (need to wait load)
+    if(window.location.href.indexOf("sobre") == -1 &&
+              window.location.href.indexOf("contato") == -1){
+        console.log("hid");
+        $( ".footer-content" ).hide();
+    }else{
+        console.log("show");
+        $( ".footer-content" ).show();
+    }
 });
 
 
@@ -253,8 +260,8 @@ $(function() {
             height = $window.height();
 
             if(sessionStorage.currentPlate != 'trabalho' &&
-              window.location.href.indexOf("sobre") == 0 &&
-              window.location.href .indexOf("contato") == 0
+              window.location.href.indexOf("sobre") == -1 &&
+              window.location.href.indexOf("contato") == -1
               ){
                 if (window.RT){
                 }else{
