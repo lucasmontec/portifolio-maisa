@@ -26,7 +26,9 @@ textarea {
 }
 
 /* for each field */
-.contato-field{
+.simpleform-contact input[type="text"],
+.simpleform-contact input[type="email"],
+.simpleform-contact textarea{
     font-family: CenturyGothic;
     font-size: 18px;
     line-height: 22px;
@@ -48,12 +50,12 @@ textarea {
     -ms-box-sizing: border-box;
     box-sizing: border-box; 
 }
-.cf-tall{
+.simpleform-contact textarea{
     height: 200px;
 }
 
 /* Bottao de curriculo */
-#button-enviar{
+.simpleform-contact input[type="submit"]{
     text-decoration: none;
     color: black;
     font-family: Century;
@@ -70,7 +72,7 @@ textarea {
     
     border-style: solid;
     border-width: 4px;
-    border-color: #00FFD8;
+    border-color: #AAA;
     cursor: pointer;
 }
 
@@ -82,7 +84,7 @@ textarea {
     right: 0px;
     display: inline-block;
     height: 312px;
-    background-color: lightgray;
+    background-color: #EEE;
 }
 
 /* style the place holder */
@@ -111,34 +113,129 @@ textarea {
     font-family: GothicItalic;
     font-size: 16px;
     line-height: 22px;
+    
+    transition: right 0.4s;
 }
 .contato-content{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 80%;
+    
+    height: 78%;
+    
     margin: auto;
     position: absolute;
     top: 0; left: 80px; bottom: 0; right: 0;
+    
+    white-space: nowrap;
 }
 .contato-content img{
     width: 44px;
     height: 44px;
+    
     display: inline-block;
     vertical-align: top;
+    
     margin-right: 15px;
 }
 .cii-content{
     display: inline-block;
     vertical-align: top;
 }
+.cii-content hr{
+    height:2px;
+    visibility:hidden;
+    margin-bottom:-1px;
+}
 .contato-infos strong{
     font-family: GothicBold;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 18px;
     font-weight: normal;
 }
-.contato-infos-item{
+
+/* change info menu to 'smart' */
+@media all and (max-width: 1080px) and (min-width: 650px){
+    .contato-infos{
+        width: 500px;
+        right: -360px;
+    }
+    .contato-infos:hover{
+        right: 0px;
+    }
+    .contato-form-area{
+        width: 80%;
+    }
+}
+/* break the line when small */
+@media all and (max-width: 650px){
+    .contato-infos{
+        width: 80%;
+        position: static;
+        display: block;
+        clear: both;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .contato-content{
+        position: relative;
+        width: 80%;
+        top: 30px;
+        left: 0;
+    }
+    .contato-form-area{
+        width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+/* font keep inside */
+@media all and (max-width: 600px){
+    .contato-infos{
+        font-size: 14px;
+        line-height: 16px;
+    }
+    .simpleform-contact input[type="submit"]{
+        width: 100%;
+    }
+}
+@media all and (max-width: 550px){
+    .contato-infos{
+        height: 500px;
+    }
+    .contato-content img{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    .cii-content{
+        text-align: center;
+        display: block;
+    }
+}
+@media all and (max-width: 410px){
+    .contato-infos{
+        font-size: 12px;
+        line-height: 13px;
+    }
+}
+
+/* Move content for tall browsers */
+@media all and (min-height: 820px){
+    .contato-body{
+        margin: 250px auto;
+        margin-bottom: 80px;
+    }
+}
+@media all and (min-height: 890px){
+    .contato-body{
+        margin: 250px auto;
+        margin-bottom: 150px;
+    }
 }
 
 /* images */

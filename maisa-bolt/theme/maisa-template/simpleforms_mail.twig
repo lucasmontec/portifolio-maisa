@@ -1,0 +1,13 @@
+<p>Oi maisa,</p>
+
+<p>Alguém entrou em contato com você pelo {{ paths.currenturl }}!
+A mensagem é:</p>
+
+<hr>
+
+{% for label, value in form %}
+<p>{{ label }}: {{ value }}</p>
+
+{% endfor %}
+
+-- <br>

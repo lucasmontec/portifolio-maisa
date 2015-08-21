@@ -1,0 +1,21 @@
+{% form_theme form 'simpleforms_fields.twig' %}
+
+{% if error %}
+    <p class="simpleform-error">{{ error }}</p>
+{% endif %}
+{% if message %}
+    <p class="simpleform-message">{{ message }}</p>
+{% endif %}
+{% if not sent %}
+{% if recaptcha_theme %}
+<script>
+    var RecaptchaOptions = {
+        theme : '{{ recaptcha_theme }}'
+    };
+</script>
+{% endif %}
+<form action="#" method="post" class="simpleform-{{ formname }}" enctype="multipart/form-data">
+    {{ form_widget(form) }}
+    <input type="submit" name="submit" value="{{ button_text }}" class="simpleform-submit" />
+</form>
+{% endif %}
