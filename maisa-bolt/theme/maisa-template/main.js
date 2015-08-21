@@ -27,6 +27,7 @@ var cellHForBrowserSize = [
     {sizew: 1044 , sizeh: 1080, cellH: 20},
     {sizew: 1118 , sizeh: 1080, cellH: 60}
 ];
+var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 function inRange(val, min, max){
     return val >= min && val <= max
@@ -68,7 +69,7 @@ function calcCellH() {
             }
         }
     }
-    console.log(w_bestCellH);
+    //console.log(w_bestCellH);
     //console.log("screen: "+w_width+" "+w_height+" using cell h: "+w_bestCellH);
 }
 
@@ -187,43 +188,40 @@ $(document).ready(function() {
         label: ''   
     });
     
-    /*$(window).bind('resize', function(e)
-    {
-      if (window.RT) clearTimeout(window.RT);
-        window.RT = setTimeout(function()
-      {
-        this.location.reload(false);
-        //buildWall();
-      }, 50);
-    });*/
-    
-    $("#filter-all,#name").click(
+    //Touch on mobile, click on browser
+    var clickEventType = ((document.ontouchstart!==null)?'click':'touchstart');
+
+    $("#filter-all,#name").on(clickEventType,
         function(){
             sessionStorage.currentPlate = 'all';
             fetchState();
             changeClass($("#filter-design-i"),"menu-design-v", "menu-design");
             changeClass($("#filter-art-i"),"menu-ilustra-v", "menu-ilustra");
             changeClass($("#filter-all-i"),"menu-circulo-v", "menu-circulo");
+            return false;
         }
     );
     
-    $("#filter-art").click(
+    $("#filter-art").on(clickEventType,
         function(){
             sessionStorage.currentPlate = 'ilustra';
             fetchState();
             changeClass($("#filter-all-i"),"menu-circulo", "menu-circulo-v");
             changeClass($("#filter-design-i"),"menu-design", "menu-design-v");
             changeClass($("#filter-art-i"),"menu-ilustra-v", "menu-ilustra");
+            return false;
         }
     );
 
-    $("#filter-design").click(
+    $("#filter-design").on(clickEventType,
         function(){
+            console.log("clicked");
             sessionStorage.currentPlate = 'design';
             fetchState();
             changeClass($("#filter-all-i"),"menu-circulo", "menu-circulo-v");
             changeClass($("#filter-art-i"),"menu-ilustra", "menu-ilustra-v");
             changeClass($("#filter-design-i"),"menu-design-v", "menu-design");
+            return false;
         }
     );
     
@@ -231,29 +229,31 @@ $(document).ready(function() {
     //Hover for top menu
     $( "#filter-art-t" ).hide();
     $( "#filter-design-t" ).hide();
-    $("#filter-art").hover(
-        function (){
-            $( "#filter-art-i" ).hide();
-            $( "#filter-art-t" ).show();
-        }
-    ,
-        function (){
-            $( "#filter-art-i" ).show();
-            $( "#filter-art-t" ).hide();
-        }
-    );
-    
-    $("#filter-design").hover(
-        function (){
-            $( "#filter-design-i" ).hide();
-            $( "#filter-design-t" ).show();
-        }
-    ,
-        function (){
-            $( "#filter-design-i" ).show();
-            $( "#filter-design-t" ).hide();
-        }
-    );
+    if(!mobile){
+        $("#filter-art").hover(
+            function (){
+                $( "#filter-art-i" ).hide();
+                $( "#filter-art-t" ).show();
+            }
+        ,
+            function (){
+                $( "#filter-art-i" ).show();
+                $( "#filter-art-t" ).hide();
+            }
+        );
+
+        $("#filter-design").hover(
+            function (){
+                $( "#filter-design-i" ).hide();
+                $( "#filter-design-t" ).show();
+            }
+        ,
+            function (){
+                $( "#filter-design-i" ).show();
+                $( "#filter-design-t" ).hide();
+            }
+        );
+    }
     
     //Hide footer (need to wait load)
     if(window.location.href.indexOf("sobre") == -1 &&

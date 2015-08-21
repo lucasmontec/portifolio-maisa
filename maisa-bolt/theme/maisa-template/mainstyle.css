@@ -56,6 +56,7 @@ html{
     position: absolute;
     top: 64px;
     right: 7.5%;
+    z-index: 3;
 }
 
 /* Botões */
@@ -175,11 +176,11 @@ html{
 /*
 * Mobile menu
 */
-.slicknav_menu a{
+.slicknav_menu a:not(.slicknav_btn){
     text-decoration: none;
     color: black;
     font-size: 20px;
-    margin-top: 7px;
+    margin-top: 14px;
 }
 .slicknav_menu a:not(.selected){
     font-family: CenturyGothic;
