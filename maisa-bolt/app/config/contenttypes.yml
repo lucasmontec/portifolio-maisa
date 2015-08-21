@@ -33,6 +33,34 @@ pages:
     taxonomy: [ chapters ]
     recordsperpage: 100
 
+infos:
+    name: Infos
+    slug: infos
+    singular_name: info
+    singular_slug: info
+    fields:
+        title:
+            type: text
+            group: content
+        slug:
+            type: slug
+            uses: title
+        telefone:
+            type: html
+            group: content
+        email:
+            type: html
+            group: content
+        endereco:
+            type: html
+            group: content
+        geolocation:
+            type: geolocation
+            group: content
+    listing_records: 9
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 8
 
 # The 'Showcases' is not particularly useful in most cases, but it does a good
 # job of showcasing most of the available fieldtypes. Feel free to delete it, or
@@ -244,7 +272,7 @@ trabalhos:
             values: [ normal, alto, grande ]
         tipo:
             type: select
-            values: [ ilustra, design, outro ]
+            values: [ ilustra, design, esconder ]
         galeria:
             type: imagelist
     record_template: job.twig
