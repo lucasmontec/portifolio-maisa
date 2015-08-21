@@ -34,7 +34,9 @@
                     axis: "x",
                     scroll: false
                 });
+                //Since we need to add lightbox every time, remove it to avoid stacking bug
                 $( "#lightbox" ).remove();
+                $( "#lightboxOverlay" ).remove();
             });
         </script>
         <div class="job-gallery">
