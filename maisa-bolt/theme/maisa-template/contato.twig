@@ -1,4 +1,9 @@
 {% include '_header.twig' %}
+
+        <!-- Carrega informação de contato -->
+        {% setcontent contato = 'infos' where { title: '%Contato%' } returnsingle %}
+        <!-- {{ dump(contato) }} -->
+
         <!-- Conteúdo principal - A barriga do site -->
         <div class="container">
 
@@ -10,6 +15,8 @@
                     <h2 class="cf-head">fale comigo</h2>
                     
                     <!-- O form de envio de email -->
+                    <!-- see: http://www.w3schools.com/php/func_mail_mail.asp -->
+                    <!-- use js to send the mail using another php page, js shows confirmation here -->
                     <form>     
                         <input class="contato-field" placeholder="seu nome" type="text" name="name"/>
                         <input class="contato-field" placeholder="seu email" type="email" name="email"/>
@@ -19,6 +26,26 @@
                 </div>
 
                 <div class="contato-infos">
+                    <div class="contato-content">
+                        <div class="contato-infos-item">
+                            <img src="{{ paths.theme }}imgs/contato/email.png"/>
+                            <div class="cii-content">
+                            {{ contato.email }}
+                            </div>
+                        </div>
+                        <div class="contato-infos-item">
+                            <img src="{{ paths.theme }}imgs/contato/telefone.png"/>
+                            <div class="cii-content">
+                            {{ contato.telefone }}
+                            </div>
+                        </div>
+                        <div class="contato-infos-item">
+                            <img src="{{ paths.theme }}imgs/contato/localizacao.png"/>
+                            <div class="cii-content">
+                            {{ contato.endereco }}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             

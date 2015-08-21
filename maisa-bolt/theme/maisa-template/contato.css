@@ -105,3 +105,51 @@ textarea {
    font-family: GothicItalic;
    color: gray; 
 }
+
+/* Info de contato */
+.contato-infos{
+    font-family: GothicItalic;
+    font-size: 16px;
+    line-height: 22px;
+}
+.contato-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80%;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 80px; bottom: 0; right: 0;
+}
+.contato-content img{
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 15px;
+}
+.cii-content{
+    display: inline-block;
+    vertical-align: top;
+}
+.contato-infos strong{
+    font-family: GothicBold;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: normal;
+}
+.contato-infos-item{
+}
+
+/* images */
+.email{
+    background-image: url(imgs/contato/email.png);
+}
+
+.localizacao{
+    background-image: url(imgs/contato/localizacao.png);
+}
+
+.telefone{
+    background-image: url(imgs/contato/telefone.png);
+}
