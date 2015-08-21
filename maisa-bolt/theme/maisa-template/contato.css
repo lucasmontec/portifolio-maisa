@@ -6,9 +6,23 @@
     padding: 0px;
 }
 
+/* mail form header */
+.cf-head{
+    font-family: Century;
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 100;
+    
+    margin-bottom: 28px;
+}
+
 /* the mail form */
-.contato-form{
+.contato-form-area{
     width: 50%;
+    display: inline-block;
+}
+textarea {
+   resize: none;
 }
 
 /* for each field */
@@ -18,7 +32,7 @@
     line-height: 22px;
     
     padding: 6px 0px 7px 12px;
-    margin-bottom: 17px;
+    margin-bottom: 13px;
     
     background-color: white;
     color: black;
@@ -33,6 +47,42 @@
     -o-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box; 
+}
+.cf-tall{
+    height: 200px;
+}
+
+/* Bottao de curriculo */
+#button-enviar{
+    text-decoration: none;
+    color: black;
+    font-family: Century;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 100;
+    background-color: white;
+    
+    padding: 13px 25px 14px 25px;
+
+    position: relative;
+    top: 10px;
+    float: right;
+    
+    border-style: solid;
+    border-width: 4px;
+    border-color: #00FFD8;
+    cursor: pointer;
+}
+
+/* right side information */
+.contato-infos{
+    width: 40%;
+    position: absolute;
+    margin-top: 60px;
+    right: 0px;
+    display: inline-block;
+    height: 312px;
+    background-color: lightgray;
 }
 
 /* style the place holder */

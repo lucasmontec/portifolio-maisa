@@ -6,13 +6,20 @@
             
             <div class="contato-body">
                 
-                <form class="contato-form">     
-                    <input class="contato-field" placeholder="seu nome" type="text" name="name"/>
-                    <input class="contato-field" placeholder="seu email" type="email" name="email"/>
-                    <input class="contato-field" placeholder="deixe sua mensagem aqui" type="text" name="mensagem"/>
-                    <input type="submit" value="enviar">
-                </form>
+                <div class="contato-form-area">
+                    <h2 class="cf-head">fale comigo</h2>
+                    
+                    <!-- O form de envio de email -->
+                    <form>     
+                        <input class="contato-field" placeholder="seu nome" type="text" name="name"/>
+                        <input class="contato-field" placeholder="seu email" type="email" name="email"/>
+                        <textarea class="contato-field cf-tall" placeholder="deixe sua mensagem aqui" name="mensagem" rows="5" ></textarea>
+                        <input id="button-enviar" type="submit" value="enviar">
+                    </form>
+                </div>
 
+                <div class="contato-infos">
+                </div>
             </div>
             
 		</div>
