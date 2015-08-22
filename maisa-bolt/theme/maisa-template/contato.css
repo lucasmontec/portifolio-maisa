@@ -153,6 +153,10 @@ textarea {
     line-height: 18px;
     font-weight: normal;
 }
+.simpleform-message{
+    line-height: 312px;
+    padding: 0px !important;
+}
 
 /* change info menu to 'smart' */
 @media all and (max-width: 1080px) and (min-width: 650px){
@@ -167,6 +171,7 @@ textarea {
         width: 80%;
     }
 }
+
 /* break the line when small */
 @media all and (max-width: 650px){
     .contato-infos{
