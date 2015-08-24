@@ -131,3 +131,10 @@
         margin-right: auto;
     }
 }
+
+@media all and (min-width: 1500px){
+    .sobre-description p{
+        font-size: 17px;
+        line-height: 22px;
+    }
+}

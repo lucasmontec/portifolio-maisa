@@ -49,6 +49,9 @@
     font-family: CenturyGothic;
     vertical-align:top;
 }
+.job-description p{
+    line-height: 24px;
+}
 
 /* This is a holder to the image to add the 'right' line on the image*/
 .job-line{
