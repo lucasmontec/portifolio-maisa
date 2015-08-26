@@ -150,32 +150,6 @@ html{
     } 
 }
 
-/* moves the content down further*/
-@media all and (max-width: 450px){
-    #freewall {
-        margin-top: 300px;
-    } 
-    #name{
-        display: block;
-        position: relative;
-        width: 100%;
-        left: 0px;
-        text-align: center;
-    }
-    #right-menu{
-        width: 290px;
-        height: 19px;
-        display: block;
-        position: relative;
-        top:110px;
-        right: 0;
-        margin: auto;
-    }
-    #right-menu ul li:first-child {
-	   margin-left: 2px !important;
-    }
-}
-
 /*
 * Mobile menu
 */
@@ -203,4 +177,28 @@ html{
 	.slicknav_menu {
 		display:block;
 	}
+}
+
+/* moves the content down further*/
+@media all and (max-width: 450px){
+    #freewall {
+        margin-top: 300px;
+    } 
+    #right-menu {
+		display:none;
+	}
+	.slicknav_menu {
+        top: 20px;
+		display:block;
+        z-index: 100;
+	}
+    #name{
+        display: block;
+        position: relative;
+        width: 100%;
+        left: 0px;
+        top: 100px;
+        text-align: center;
+        z-index: 20;
+    }
 }

@@ -2,9 +2,9 @@
 {% for item in menu %}
     <li>
         {% if item|current %}
-            <a class="selected" href="{{ item.link }}">{{item.label}}</a>
+            <a class="selected" id="{{item.label}}" href="{{ item.link }}">{{item.label}}</a>
         {% else %}
-            <a href="{{ item.link }}">{{item.label}}</a>
+            <a id="{{item.label}}" href="{{ item.link }}">{{item.label}}</a>
         {% endif %} 
     </li>
 {% endfor %}

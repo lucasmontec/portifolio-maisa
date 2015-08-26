@@ -10,10 +10,16 @@
         
         
         {% if trabalho.imagem != "" %}
-        <div class="job-line">
-            <div class="{{ jobimagecss }}" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+            {% if trabalho.galeria|length > 0 %}
+            <div class="job-line">
+                <div class="{{ jobimagecss }}" style="background-image: url({{ imageinfo(trabalho.imagem).url }});">
+                </div>
             </div>
-        </div>
+            {% else %}
+            <div class="job-line">
+                <img class="job-image-img" src="{{ imageinfo(trabalho.imagem).url }}" />
+            </div>
+            {% endif %}
         {% endif %}
         
         <div class="job-description">

@@ -69,9 +69,9 @@
 }
 .sobre-description p{
     font-family: CenturyGothic;
-    text-align: justify;
+    /*text-align: justify;
     text-justify: auto;
-    hyphens: auto;
+    hyphens: auto;*/
     
     font-size: 14px;
     line-height: 18px;

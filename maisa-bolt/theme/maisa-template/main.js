@@ -64,8 +64,10 @@ function calcCellH() {
                 }else{
                     w_bestCellH = 150;   
                 }
-            }else{
+            }else if(w_width > 800){
                 w_bestCellH = 130;
+            }else{
+                w_bestCellH = 1;
             }
         }
     }
@@ -94,7 +96,11 @@ function buildWall(){
 		gutterX: 12,
 		gutterY: 12,
 		onResize: function() {
-            wall.fitZone();
+            if(w_bestCellH > 1){
+                wall.fitZone();
+            }else{
+                wall.fitWidth();
+            }
 		}
     });
     
@@ -190,8 +196,19 @@ $(document).ready(function() {
     
     //Touch on mobile, click on browser
     var clickEventType = ((document.ontouchstart!==null)?'click':'touchstart');
-
-    $("#filter-all,#name").on(clickEventType,
+       
+    $("#name,#projetos").on(clickEventType,
+        function(){
+            sessionStorage.currentPlate = 'all';
+            fetchState();
+            changeClass($("#filter-design-i"),"menu-design-v", "menu-design");
+            changeClass($("#filter-art-i"),"menu-ilustra-v", "menu-ilustra");
+            changeClass($("#filter-all-i"),"menu-circulo-v", "menu-circulo");
+            window.location = '/';
+            return false;
+        }
+    );
+    $("#filter-all").on(clickEventType,
         function(){
             sessionStorage.currentPlate = 'all';
             fetchState();
